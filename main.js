@@ -6,39 +6,12 @@ function speak(text) {
     let text_speak = new SpeechSynthesisUtterance(text)
     text_speak.rate = 1
     text_speak.pitch = 1
-    text_speak.volume = 1
+    text_speak.volume = 5
     text_speak.lang = "hi-GB"
     text_speak.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Google Hindi Female')
     window.speechSynthesis.speak(text_speak)
 }
 
-function shayarispeak(text) {
-    let text_speak = new SpeechSynthesisUtterance(text)
-    text_speak.rate = 0.8
-    text_speak.pitch = 1
-    text_speak.volume = 1
-    text_speak.lang = "hi-GB"
-    text_speak.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Google Hindi Female')
-    window.speechSynthesis.speak(text_speak)
-}
-
-function wishMe() {
-    let day = new Date()
-    let hrs = day.getHours()
-    if (hrs >= 0 && hrs < 12) {
-        speak("Good Morning!! sir")
-    } else if (hrs >= 12 && hrs < 16) {
-        speak("Good Afternoon!! sir")
-    } else if (hrs >= 16 && hrs < 19) {
-        speak("Good Afternoon!! sir")
-    } else {
-        speak("Good Night !!! Sir")
-    }
-}
-
-// window.addEventListener('load', ()=>{
-//     wishMe()
-// })
 
 let speechRecognition = window.SpeechRecognition || window.webKitSpeechRecognition
 let recognition = new webkitSpeechRecognition()
@@ -178,7 +151,31 @@ function takeCommand(hukum) {
     } else if (hukum.includes("time")) {
         let time = new Date().toLocaleTimeString()
         speak("Right now it's " + time)
-    } else {
+    } else if (hukum.includes("Main Tumse Pyar Karta Hun")) {
+        speak('Wah, tumhe ye kehne ki himmat hai... ya fir tum sirf desperate ho?')
+    }
+     else if (hukum.includes("main tumse shaadi karna chahta hun" )) {
+        speak("Ye toh accha hai, par mujhe mediocrity se allergy hai.")
+    }
+     else if (hukum.includes("katappa Ne Bahubali ko kyon mara")) {
+        speak('Kyuki Bahubali ki acting ko dekh kar unhe bhi cringe aane laga tha!')
+    }
+     else if (hukum.includes(" saccha pyar ")) {
+        speak('Kyunki tumhara pyaar bhi tumse bhaag gaya hai, jaise sab log tumse door rehna chahte hain.')
+    }
+     else if (hukum.includes("Mujhe Ek Ladki pasand hai")) {
+        speak('Wah, pyaar toh sirf un logon ke liye hota hai jo kuch achieve karte hain—tumhara kya?')
+    }
+     else if (hukum.includes("Mujhe Nind Kyon nahin aati")) {
+        speak('Kyunki jab tak tumhari zindagi ka koi purpose nahi hai, tab tak neend ka kya kaam? ya phir Shayad tumhare sapne bhi keh rahe hain, ‘Isse toh hum door hi rahenge!')
+    }
+     else if (hukum.includes("Kya Tum Mujhse Shaadi Karogi")) {
+        speak(' nahi itne bure din nahi aye mere')
+    }
+     else if (hukum.includes("tum meri coding skills ko Kitna rate Karogi")) {
+        speak(' Mujhe lagta hai tumhare keyboard par sirf Ctrl plus Z ka button kaam karta hai!')
+    }
+     else {
         speak("Sorry, I didn't catch that. Could you repeat?")
     }
 }
