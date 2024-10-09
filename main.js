@@ -108,7 +108,7 @@ function weatherUpdate() {
 }
 
 btn.addEventListener('click', () => {
-    content.innerText = 'Listening'
+    content.innerText = 'Wait '
     recognition.start()
     
     // Hide the button and show the orb
